@@ -8,7 +8,6 @@ import com.apmanager.ui.formaters.Currency;
 import com.apmanager.ui.listeners.ActionListener;
 import com.apmanager.ui.menu.Application;
 import com.apmanager.ui.menu.JDialogSearchProduct;
-
 import com.towel.el.FieldResolver;
 import com.towel.swing.table.ObjectTableModel;
 import java.awt.AWTEvent;
