@@ -51,7 +51,7 @@ public class JPanelVenda extends javax.swing.JPanel implements AdminPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new Table();
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new Button(this, KeyEvent.VK_F5);
+        jButton1 = new Button(this, KeyEvent.VK_F8);
 
         jTable1.setBackground(new java.awt.Color(245, 245, 245));
         jTable1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -153,7 +153,7 @@ public class JPanelVenda extends javax.swing.JPanel implements AdminPanel {
                                     } else if (ev.getID() == KeyEvent.KEY_RELEASED && checkKeyAction(ev)) {
                                         dialog.setText(ev.getKeyChar() + "");
                                         dialog.setVisible(true);
-                                    } else if (ev.getKeyCode() == KeyEvent.VK_F8) {
+                                    } else if (ev.getKeyCode() == KeyEvent.VK_F5) {
                                         dialog.setText("");
                                         dialog.setVisible(true);
                                     }

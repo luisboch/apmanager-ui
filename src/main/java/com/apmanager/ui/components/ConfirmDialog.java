@@ -177,6 +177,7 @@ public class ConfirmDialog extends javax.swing.JDialog {
     public void setText(String text){
         jLabel1.setText(text);
     }
+    
     public void setMessage(String text){
         jLabel1.setText(text);
     }

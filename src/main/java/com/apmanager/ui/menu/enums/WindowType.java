@@ -5,6 +5,7 @@
 package com.apmanager.ui.menu.enums;
 
 import com.apmanager.ui.menu.NewJPanel;
+import com.apmanager.ui.panels.vehiclebrand.JPanelVehicleBrand;
 import com.apmanager.ui.panels.JPanelVenda;
 import javax.swing.JPanel;
 
@@ -13,9 +14,10 @@ import javax.swing.JPanel;
  * @author ADMIN
  */
 public enum WindowType {
-    VENDA(JPanelVenda.class),
-    PESQUISA(NewJPanel.class),
-    CADASTROPRODUTO(NewJPanel.class);
+    SALE(JPanelVenda.class),
+    SALESEARCH(NewJPanel.class),
+    PRODUCTREGISTER(NewJPanel.class),
+    VEHICLEBRANDREGISTER(JPanelVehicleBrand.class);
     Class<? extends JPanel> destined;
 
     private WindowType(Class<? extends JPanel> destined) {

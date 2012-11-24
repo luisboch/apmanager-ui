@@ -129,6 +129,9 @@ public class Button extends JButton {
             case KeyEvent.VK_F12:
                     b.append("F12 - ");
                     break;
+            case KeyEvent.VK_DELETE:
+                    b.append("DEL - ");
+                    break;
         }
         
         b.append(text);

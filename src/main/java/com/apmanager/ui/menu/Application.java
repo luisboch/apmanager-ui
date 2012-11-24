@@ -32,6 +32,7 @@ public class Application extends javax.swing.JFrame {
 
     private Application() {
         initComponents();
+        
         setLocationRelativeTo(null);
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         configureListeners();
@@ -58,9 +59,12 @@ public class Application extends javax.swing.JFrame {
         jPanelRootPane = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenuVenda = new javax.swing.JMenu();
-        jMenuItem4 = new JMenuDinamic(this, WindowType.VENDA);
-        jMenuItem5 = new JMenuDinamic(this, WindowType.PESQUISA);
+        jMenuItem4 = new JMenuDinamic(this, WindowType.SALE);
+        jMenuItem5 = new JMenuDinamic(this, WindowType.SALESEARCH);
         jMenu4 = new javax.swing.JMenu();
+        jMenuItem6 = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
+        jMenuItem7 = new JMenuDinamic(this, WindowType.VEHICLEBRANDREGISTER);
 
         jMenu1.setText("jMenu1");
 
@@ -88,7 +92,18 @@ public class Application extends javax.swing.JFrame {
         jMenuBar1.add(jMenuVenda);
 
         jMenu4.setText("Administração");
+
+        jMenuItem6.setText("jMenuItem6");
+        jMenu4.add(jMenuItem6);
+
         jMenuBar1.add(jMenu4);
+
+        jMenu3.setText("Cadastros");
+
+        jMenuItem7.setText("Marcas de Veículos");
+        jMenu3.add(jMenuItem7);
+
+        jMenuBar1.add(jMenu3);
 
         setJMenuBar(jMenuBar1);
 
@@ -111,6 +126,7 @@ public class Application extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
@@ -118,6 +134,8 @@ public class Application extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenu jMenuVenda;
     private javax.swing.JPanel jPanelRootPane;
     private javax.swing.JPopupMenu jPopupMenu1;
@@ -168,7 +186,10 @@ public class Application extends javax.swing.JFrame {
     }
 
     public static Application getInstance() {
-        return instance == null ? instance = new Application() : instance;
+        if(instance == null){
+             instance = new Application();
+        }
+        return instance ;
     }
 
     private void configureIcon() {
@@ -177,4 +198,5 @@ public class Application extends javax.swing.JFrame {
         Image img = kit.createImage(url);
         setIconImage(img);
     }
+
 }
