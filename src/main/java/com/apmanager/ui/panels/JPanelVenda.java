@@ -233,4 +233,11 @@ public class JPanelVenda extends javax.swing.JPanel implements AdminPanel {
             }
         });
     }
+
+    @Override
+    public String getTitle() {
+        return "Vendas";
+    }
+    
+    
 }

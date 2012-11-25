@@ -4,8 +4,6 @@
  */
 package com.apmanager.ui.menu;
 
-
-
 import com.apmanager.ui.menu.enums.WindowType;
 import com.apmanager.ui.panels.AdminPanel;
 import java.awt.Image;
@@ -27,12 +25,14 @@ import javax.swing.KeyStroke;
 public class Application extends javax.swing.JFrame {
 
     private static Application instance;
+
     private JMenuDinamic selected;
+
     private final JDialogLoading loading = new JDialogLoading(this);
 
     private Application() {
         initComponents();
-        
+
         setLocationRelativeTo(null);
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         configureListeners();
@@ -57,6 +57,8 @@ public class Application extends javax.swing.JFrame {
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
         jPanelRootPane = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabelTitle = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenuVenda = new javax.swing.JMenu();
         jMenuItem4 = new JMenuDinamic(this, WindowType.SALE);
@@ -79,6 +81,9 @@ public class Application extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanelRootPane.setLayout(new java.awt.BorderLayout());
+
+        jLabelTitle.setFont(new java.awt.Font("Abyssinica SIL", 1, 14)); // NOI18N
+        jPanel1.add(jLabelTitle);
 
         jMenuVenda.setText("Vendas");
 
@@ -111,11 +116,18 @@ public class Application extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelRootPane, javax.swing.GroupLayout.DEFAULT_SIZE, 1004, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 992, Short.MAX_VALUE)
+                    .addComponent(jPanelRootPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelRootPane, javax.swing.GroupLayout.DEFAULT_SIZE, 526, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanelRootPane, javax.swing.GroupLayout.DEFAULT_SIZE, 498, Short.MAX_VALUE))
         );
 
         pack();
@@ -124,6 +136,7 @@ public class Application extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabelTitle;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
@@ -137,6 +150,7 @@ public class Application extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenu jMenuVenda;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanelRootPane;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JPopupMenu jPopupMenu2;
@@ -170,6 +184,7 @@ public class Application extends javax.swing.JFrame {
 
                 AdminPanel admPanel = (AdminPanel) panel;
                 admPanel.loadContent();
+                setTitle(admPanel.getTitle());
             }
         };
 
@@ -186,10 +201,10 @@ public class Application extends javax.swing.JFrame {
     }
 
     public static Application getInstance() {
-        if(instance == null){
-             instance = new Application();
+        if (instance == null) {
+            instance = new Application();
         }
-        return instance ;
+        return instance;
     }
 
     private void configureIcon() {
@@ -199,4 +214,9 @@ public class Application extends javax.swing.JFrame {
         setIconImage(img);
     }
 
+    @Override
+    public void setTitle(String title) {
+        super.setTitle("APManager - " + title);
+        jLabelTitle.setText(title);
+    }
 }
