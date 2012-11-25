@@ -62,11 +62,12 @@ public class Application extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenuVenda = new javax.swing.JMenu();
         jMenuItem4 = new JMenuDinamic(this, WindowType.SALE);
-        jMenuItem5 = new JMenuDinamic(this, WindowType.SALESEARCH);
+        jMenuItem5 = new JMenuDinamic(this, WindowType.SALES_SEARCH);
         jMenu4 = new javax.swing.JMenu();
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
-        jMenuItem7 = new JMenuDinamic(this, WindowType.VEHICLEBRANDREGISTER);
+        jMenuItem7 = new JMenuDinamic(this, WindowType.VEHICLE_BRAND_CRUD);
+        jMenuItemProductBrand =  new JMenuDinamic(this, WindowType.PRODUCT_BRAND_CRUD);
 
         jMenu1.setText("jMenu1");
 
@@ -108,6 +109,9 @@ public class Application extends javax.swing.JFrame {
         jMenuItem7.setText("Marcas de Veículos");
         jMenu3.add(jMenuItem7);
 
+        jMenuItemProductBrand.setText("Marcas de Produtos");
+        jMenu3.add(jMenuItemProductBrand);
+
         jMenuBar1.add(jMenu3);
 
         setJMenuBar(jMenuBar1);
@@ -117,10 +121,9 @@ public class Application extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 992, Short.MAX_VALUE)
-                    .addComponent(jPanelRootPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 992, Short.MAX_VALUE)
                 .addContainerGap())
+            .addComponent(jPanelRootPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -149,6 +152,7 @@ public class Application extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
+    private javax.swing.JMenuItem jMenuItemProductBrand;
     private javax.swing.JMenu jMenuVenda;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanelRootPane;

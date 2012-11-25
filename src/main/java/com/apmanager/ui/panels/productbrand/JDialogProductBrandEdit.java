@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.apmanager.ui.panels.vehiclebrand;
+package com.apmanager.ui.panels.productbrand;
 
 import com.apmanager.ui.components.abstractcomps.JDialogEscape;
 
@@ -10,12 +10,12 @@ import com.apmanager.ui.components.abstractcomps.JDialogEscape;
  *
  * @author luis
  */
-public class JDialogVehicleBrandEdit extends JDialogEscape{
+public class JDialogProductBrandEdit extends JDialogEscape {
 
     /**
-     * Creates new form JDialogVehicleBrandEdit
+     * Creates new form JDialogProductBrandEdit
      */
-    public JDialogVehicleBrandEdit(java.awt.Frame parent, boolean modal) {
+    public JDialogProductBrandEdit(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
         setLocationRelativeTo(parent);
@@ -159,7 +159,7 @@ public class JDialogVehicleBrandEdit extends JDialogEscape{
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 179, Short.MAX_VALUE))
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);

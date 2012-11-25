@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.apmanager.ui.panels.vehiclebrand;
+package com.apmanager.ui.panels.productbrand;
 
 import com.apmanager.domain.entity.Entity;
 import com.apmanager.ui.components.Button;
@@ -22,18 +22,17 @@ import javax.swing.JPanel;
  *
  * @author luis
  */
-public class JPanelVehicleBrand extends AbstractAdminPanel implements AdminPanel {
+public class JPanelProductBrand extends AbstractAdminPanel implements AdminPanel {
 
-    JDialogVehicleBrandEdit dialog;
+    JDialogProductBrandEdit dialog;
 
     /**
-     * Creates new form JPanelVehicleBrand
+     * Creates new form JPanelProductBrand
      */
-    public JPanelVehicleBrand() {
-        super();
+    public JPanelProductBrand() {
         initComponents();
         addListeners();
-        dialog = new JDialogVehicleBrandEdit(Application.getInstance(), true);
+        dialog = new JDialogProductBrandEdit(Application.getInstance(), true);
     }
 
     /**
@@ -176,7 +175,7 @@ public class JPanelVehicleBrand extends AbstractAdminPanel implements AdminPanel
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 549, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 551, Short.MAX_VALUE)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -271,7 +270,7 @@ public class JPanelVehicleBrand extends AbstractAdminPanel implements AdminPanel
 
     @Override
     public String getTitle() {
-        return "Marcas de Veiculos";
+        return "Marcas de Produtos";
     }
     
     
