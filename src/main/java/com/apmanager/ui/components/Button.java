@@ -21,9 +21,21 @@ import javax.swing.JPanel;
  * @author ADMIN
  */
 public class Button extends JButton {
+
     private static final Logger log = Logger.getLogger(Button.class.getSimpleName());
+
     private Component parent;
+
     private int key;
+
+    private boolean useKey = true;
+
+    public Button(Component parent) {
+        this.parent = parent;
+        useKey = false;
+        configure();
+
+    }
 
     public Button(Component parent, int keyEventVk) {
         this.parent = parent;
@@ -65,8 +77,9 @@ public class Button extends JButton {
         setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         setForeground(new java.awt.Color(51, 51, 51));
         setMargin(new Insets(4, 10, 4, 10));
-        addListener();
-
+        if (useKey) {
+            addListener();
+        }
     }
 
     private void addListener() {
@@ -79,8 +92,8 @@ public class Button extends JButton {
                         if (jbutton.isVisible() && parent.isVisible() && parent.isEnabled()) {
                             KeyEvent ev = (KeyEvent) event;
                             // Verifica se foi um key Released
-                            if (ev.getKeyCode() == key && ev.getID() ==  KeyEvent.KEY_RELEASED) {
-                                 log.info("Performing click");
+                            if (ev.getKeyCode() == key && ev.getID() == KeyEvent.KEY_RELEASED) {
+                                log.info("Performing click");
                                 jbutton.doClick();
                             }
                         }
@@ -92,51 +105,50 @@ public class Button extends JButton {
     @Override
     public void setText(String text) {
         StringBuilder b = new StringBuilder();
-        switch(key){
-            case KeyEvent.VK_F1:
+        if (useKey) {
+            switch (key) {
+                case KeyEvent.VK_F1:
                     b.append("F1 - ");
                     break;
-            case KeyEvent.VK_F2:
+                case KeyEvent.VK_F2:
                     b.append("F2 - ");
                     break;
-            case KeyEvent.VK_F3:
+                case KeyEvent.VK_F3:
                     b.append("F3 - ");
                     break;
-            case KeyEvent.VK_F4:
+                case KeyEvent.VK_F4:
                     b.append("F4 - ");
                     break;
-            case KeyEvent.VK_F5:
+                case KeyEvent.VK_F5:
                     b.append("F5 - ");
                     break;
-            case KeyEvent.VK_F6:
+                case KeyEvent.VK_F6:
                     b.append("F6 - ");
                     break;
-            case KeyEvent.VK_F7:
+                case KeyEvent.VK_F7:
                     b.append("F7 - ");
                     break;
-            case KeyEvent.VK_F8:
+                case KeyEvent.VK_F8:
                     b.append("F8 - ");
                     break;
-            case KeyEvent.VK_F9:
+                case KeyEvent.VK_F9:
                     b.append("F9 - ");
                     break;
-            case KeyEvent.VK_F10:
+                case KeyEvent.VK_F10:
                     b.append("F10 - ");
                     break;
-            case KeyEvent.VK_F11:
+                case KeyEvent.VK_F11:
                     b.append("F11 - ");
                     break;
-            case KeyEvent.VK_F12:
+                case KeyEvent.VK_F12:
                     b.append("F12 - ");
                     break;
-            case KeyEvent.VK_DELETE:
+                case KeyEvent.VK_DELETE:
                     b.append("DEL - ");
                     break;
+            }
         }
-        
         b.append(text);
         super.setText(b.toString());
     }
-    
-    
 }

@@ -5,22 +5,30 @@
 package com.apmanager.ui.panels.vehiclebrand;
 
 import com.apmanager.ui.components.abstractcomps.JDialogEscape;
+import java.awt.Component;
 
 /**
  *
  * @author luis
  */
 public class JDialogVehicleBrandEdit extends JDialogEscape{
-
+    private Component parent;
     /**
      * Creates new form JDialogVehicleBrandEdit
      */
     public JDialogVehicleBrandEdit(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
+        this.parent = parent;
         initComponents();
         setLocationRelativeTo(parent);
     }
-
+    public JDialogVehicleBrandEdit(javax.swing.JDialog parent, boolean modal) {
+        super(parent, modal);
+        this.parent = parent;
+        initComponents();
+        setLocationRelativeTo(parent);
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -99,6 +107,7 @@ public class JDialogVehicleBrandEdit extends JDialogEscape{
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Marca de Veículo");
         setMinimumSize(new java.awt.Dimension(627, 289));
 
         jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder("Dados do Registro"));
@@ -159,7 +168,7 @@ public class JDialogVehicleBrandEdit extends JDialogEscape{
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 179, Short.MAX_VALUE))
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);

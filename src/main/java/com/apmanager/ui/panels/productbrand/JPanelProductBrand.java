@@ -30,6 +30,7 @@ public class JPanelProductBrand extends AbstractAdminPanel implements AdminPanel
      * Creates new form JPanelProductBrand
      */
     public JPanelProductBrand() {
+        super();
         initComponents();
         addListeners();
         dialog = new JDialogProductBrandEdit(Application.getInstance(), true);

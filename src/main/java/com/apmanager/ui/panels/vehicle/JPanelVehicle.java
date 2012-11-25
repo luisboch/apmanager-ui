@@ -1,4 +1,4 @@
-package com.apmanager.ui.panels.shelf;
+package com.apmanager.ui.panels.vehicle;
 
 import com.apmanager.domain.entity.Entity;
 import com.apmanager.ui.components.Button;
@@ -18,18 +18,18 @@ import javax.swing.JPanel;
  *
  * @author luis
  */
-public class JPanelShelf extends AbstractAdminPanel implements AdminPanel {
+public class JPanelVehicle extends AbstractAdminPanel implements AdminPanel {
 
-    private JDialogShelfEdit dialog;
+    private JDialogVehicleEdit dialog;
 
     /**
-     * Creates new form JPanelShelf
+     * Creates new form JPanelVehicle
      */
-    public JPanelShelf() {
+    public JPanelVehicle() {
         super();
         initComponents();
         addListeners();
-        dialog = new JDialogShelfEdit(Application.getInstance(), true);
+        dialog = new JDialogVehicleEdit(Application.getInstance(), true);
     }
 
     /**
@@ -78,23 +78,23 @@ public class JPanelShelf extends AbstractAdminPanel implements AdminPanel {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "ID", "Código"
+                "ID", "Marca", "Nome"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.String.class
+                java.lang.Object.class, java.lang.String.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false
+                false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -118,6 +118,7 @@ public class JPanelShelf extends AbstractAdminPanel implements AdminPanel {
         jScrollPane1.setViewportView(jTable1);
         jTable1.getColumnModel().getColumn(0).setResizable(false);
         jTable1.getColumnModel().getColumn(1).setResizable(false);
+        jTable1.getColumnModel().getColumn(2).setResizable(false);
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Administrar"));
 
@@ -172,7 +173,7 @@ public class JPanelShelf extends AbstractAdminPanel implements AdminPanel {
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 553, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 554, Short.MAX_VALUE)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
