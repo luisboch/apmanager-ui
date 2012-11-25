@@ -9,6 +9,7 @@ import com.apmanager.ui.listeners.ActionListener;
 import java.awt.AWTEvent;
 import java.awt.Dialog;
 import java.awt.Toolkit;
+import java.awt.Window;
 import java.awt.event.AWTEventListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
@@ -32,10 +33,18 @@ public class ConfirmDialog extends javax.swing.JDialog {
     }
 
     public ConfirmDialog(Dialog owner) {
-        super(owner, true);
-        
+        super(owner);
+        initComponents();
+        setLocationRelativeTo(null);
+        addListeners();
     }
-    
+
+    public ConfirmDialog(Window owner) {
+        super(owner);
+        initComponents();
+        setLocationRelativeTo(null);
+        addListeners();
+    }
     
 
     /**

@@ -27,6 +27,7 @@ public class JPanelVenda extends javax.swing.JPanel implements AdminPanel {
 
     private static final Logger log = Logger.getLogger(JPanelVenda.class.getSimpleName());
     private final JDialogSearchProduct dialog = new JDialogSearchProduct(Application.getInstance(), true);
+    private final JDialogAlterQuantity dialogQuantity = new JDialogAlterQuantity(Application.getInstance(), true);
 
     /**
      * Creates new form JPanelVenda
@@ -52,6 +53,8 @@ public class JPanelVenda extends javax.swing.JPanel implements AdminPanel {
         jTable1 = new Table();
         jPanel1 = new javax.swing.JPanel();
         jButton1 = new Button(this, KeyEvent.VK_F8);
+        jButtonAlterQuantity = new Button(this, KeyEvent.VK_F7);
+        jButtonRemove = new Button(this, KeyEvent.VK_DELETE);
 
         jTable1.setBackground(new java.awt.Color(245, 245, 245));
         jTable1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -67,12 +70,20 @@ public class JPanelVenda extends javax.swing.JPanel implements AdminPanel {
 
         jButton1.setText("Fechar Venda");
 
+        jButtonAlterQuantity.setText("Alterar Quantidade");
+
+        jButtonRemove.setText("Remover");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButtonRemove)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButtonAlterQuantity)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton1)
                 .addContainerGap())
         );
@@ -80,7 +91,10 @@ public class JPanelVenda extends javax.swing.JPanel implements AdminPanel {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton1)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jButtonAlterQuantity)
+                    .addComponent(jButtonRemove))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -107,6 +121,8 @@ public class JPanelVenda extends javax.swing.JPanel implements AdminPanel {
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButtonAlterQuantity;
+    private javax.swing.JButton jButtonRemove;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
@@ -115,21 +131,23 @@ public class JPanelVenda extends javax.swing.JPanel implements AdminPanel {
     private void configureJTableProducts() {
         
         FieldResolver nameResolver = new FieldResolver(ProductCart.class, "name", "Nome");
-        FieldResolver unitaryValueResolver = new FieldResolver(ProductCart.class, "unitaryValue", "Preço Unitário");
+        FieldResolver unitaryValueResolver = new FieldResolver(ProductCart.class, "unitaryValue", "Preço Unitário (R$)");
         unitaryValueResolver.setFormatter(new Currency());
         FieldResolver quantityResolver = new FieldResolver(ProductCart.class, "quantity", "Quantidade");
 
-        FieldResolver totalResolver = new FieldResolver(ProductCart.class, "total", "Total");
+        FieldResolver totalResolver = new FieldResolver(ProductCart.class, "total", "Total (R$)");
         totalResolver.setFormatter(new Currency());
 
         ObjectTableModel<ProductCart> towel = new ObjectTableModel<>(
-                new FieldResolver[]{nameResolver, unitaryValueResolver, quantityResolver, totalResolver});
-
+                new FieldResolver[]{nameResolver, unitaryValueResolver, quantityResolver, totalResolver}
+                );
+        
         java.util.List<ProductCart> produtoCarts = new ArrayList<>();
         produtoCarts.add(new ProductCart(1595l, "Lampada frontal", 10.00f, 150f, 15));
         produtoCarts.add(new ProductCart());
         produtoCarts.add(new ProductCart(1595l, "Lampada frontal", 10.00f, 150f, 15));
         towel.setData(produtoCarts);
+
         jTable1.setModel(towel);
     }
 
@@ -231,6 +249,48 @@ public class JPanelVenda extends javax.swing.JPanel implements AdminPanel {
                     log.info("Closing Sale");
                 }
             }
+        });
+        jButtonRemove.addActionListener(new ActionListener(this){
+
+            @Override
+            public void onActionPerformed(ActionEvent e) throws Exception {
+                ConfirmDialog confirm = new ConfirmDialog(Application.getInstance());
+                confirm.setText("Você deseja realmente remover estes itens?<br>Esta ação não pode ser desfeita");
+                panel.setEnabled(false);
+                confirm.setVisible(true);
+                panel.setEnabled(true);
+                if (confirm.getResponse()) {
+                    log.info("Removing Itens");
+                }
+            }
+            
+        });
+        
+        jButtonRemove.addActionListener(new ActionListener(this){
+
+            @Override
+            public void onActionPerformed(ActionEvent e) throws Exception {
+                ConfirmDialog confirm = new ConfirmDialog(Application.getInstance());
+                confirm.setText("Você deseja realmente remover estes itens?<br>Esta ação não pode ser desfeita");
+                panel.setEnabled(false);
+                confirm.setVisible(true);
+                panel.setEnabled(true);
+                if (confirm.getResponse()) {
+                    log.info("Removing Itens");
+                }
+            }
+            
+        });
+        
+        jButtonAlterQuantity.addActionListener(new ActionListener(this){
+
+            @Override
+            public void onActionPerformed(ActionEvent e) throws Exception {
+                panel.setEnabled(false);
+                dialogQuantity.setVisible(true);
+                panel.setEnabled(true);
+            }
+            
         });
     }
 

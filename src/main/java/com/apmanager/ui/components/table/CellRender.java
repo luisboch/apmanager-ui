@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.apmanager.ui.components;
+package com.apmanager.ui.components.table;
 
 import java.awt.Color;
 import java.awt.Component;

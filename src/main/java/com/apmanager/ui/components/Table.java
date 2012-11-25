@@ -4,6 +4,7 @@
  */
 package com.apmanager.ui.components;
 
+import com.apmanager.ui.components.table.CellRender;
 import java.awt.Dimension;
 import java.util.Enumeration;
 import javax.swing.JLabel;

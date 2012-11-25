@@ -79,11 +79,11 @@
             <artifactId>swing-layout</artifactId>
             <version>1.0.3</version>
         </dependency>
-        <dependency>
+<!--        <dependency>
             <groupId>com.towel</groupId>
             <artifactId>objecttablemodel</artifactId>
             <version>1.0</version>
-        </dependency>
+        </dependency>-->
         
         <!-- Maven dependencies -->
         <dependency>
