@@ -66,6 +66,7 @@ public class Application extends javax.swing.JFrame {
         jMenu4 = new javax.swing.JMenu();
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
+        jMenuItem10 = new JMenuDinamic(this, WindowType.PRODUCT_CRUD);
         jMenuItem9 = new JMenuDinamic(this, WindowType.VEHICLE_CRUD);
         jMenuItemProductBrand =  new JMenuDinamic(this, WindowType.PRODUCT_BRAND_CRUD);
         jMenuItem7 = new JMenuDinamic(this, WindowType.VEHICLE_BRAND_CRUD);
@@ -107,6 +108,9 @@ public class Application extends javax.swing.JFrame {
         jMenuBar1.add(jMenu4);
 
         jMenu3.setText("Cadastros");
+
+        jMenuItem10.setText("Produtos");
+        jMenu3.add(jMenuItem10);
 
         jMenuItem9.setText("Veiculos");
         jMenu3.add(jMenuItem9);
@@ -154,6 +158,7 @@ public class Application extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;

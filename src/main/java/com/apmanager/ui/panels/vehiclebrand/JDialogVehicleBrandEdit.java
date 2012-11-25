@@ -4,8 +4,12 @@
  */
 package com.apmanager.ui.panels.vehiclebrand;
 
+import com.apmanager.ui.components.Button;
 import com.apmanager.ui.components.abstractcomps.JDialogEscape;
+import com.apmanager.ui.listeners.ActionListener;
 import java.awt.Component;
+import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
 
 /**
  *
@@ -21,12 +25,14 @@ public class JDialogVehicleBrandEdit extends JDialogEscape{
         this.parent = parent;
         initComponents();
         setLocationRelativeTo(parent);
+        addListeners();
     }
     public JDialogVehicleBrandEdit(javax.swing.JDialog parent, boolean modal) {
         super(parent, modal);
         this.parent = parent;
         initComponents();
         setLocationRelativeTo(parent);
+        addListeners();
     }
     
     /**
@@ -56,6 +62,9 @@ public class JDialogVehicleBrandEdit extends JDialogEscape{
         jScrollPane3 = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
         jLabel6 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        jButtonCancel = new Button(this, KeyEvent.VK_F9);
+        jButtonSave = new Button(this, KeyEvent.VK_F8);
 
         jLabel1.setText("Código:");
 
@@ -168,7 +177,7 @@ public class JDialogVehicleBrandEdit extends JDialogEscape{
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE))
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 313, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
@@ -192,13 +201,42 @@ public class JDialogVehicleBrandEdit extends JDialogEscape{
                 .addContainerGap())
         );
 
+        jPanel4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jButtonCancel.setText("Cancelar");
+
+        jButtonSave.setText("Salvar");
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(278, Short.MAX_VALUE)
+                .addComponent(jButtonSave)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButtonCancel)
+                .addContainerGap())
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonCancel)
+                    .addComponent(jButtonSave))
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -206,6 +244,8 @@ public class JDialogVehicleBrandEdit extends JDialogEscape{
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -213,6 +253,8 @@ public class JDialogVehicleBrandEdit extends JDialogEscape{
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonCancel;
+    private javax.swing.JButton jButtonSave;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -223,6 +265,7 @@ public class JDialogVehicleBrandEdit extends JDialogEscape{
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane2;
@@ -232,4 +275,21 @@ public class JDialogVehicleBrandEdit extends JDialogEscape{
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
+
+    private void addListeners() {
+        final JDialogVehicleBrandEdit dialog = this;
+        jButtonSave.addActionListener(new ActionListener(this){
+            @Override
+            public void onActionPerformed(ActionEvent e) throws Exception {
+                dialog.setVisible(false);
+            }
+        });
+        
+        jButtonCancel.addActionListener(new ActionListener(this){
+            @Override
+            public void onActionPerformed(ActionEvent e) throws Exception {
+                dialog.setVisible(false);
+            }
+        });
+    }
 }
