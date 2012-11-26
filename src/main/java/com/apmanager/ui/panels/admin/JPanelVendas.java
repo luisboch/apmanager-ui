@@ -93,7 +93,7 @@ public class JPanelVendas extends javax.swing.JPanel implements AdminPanel {
                 {null, null, null, null, null}
             },
             new String [] {
-                "Data", "Quantidade de Produtos", "Total Geral", "Total Líquido", "Margen"
+                "Data", "Quantidade de Produtos", "Total Geral", "Total Líquido", "Margem"
             }
         ) {
             Class[] types = new Class [] {
@@ -120,7 +120,7 @@ public class JPanelVendas extends javax.swing.JPanel implements AdminPanel {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Totalizadores"));
 
-        jLabel6.setText("Margen Obtida:");
+        jLabel6.setText("Margem Obtida:");
 
         jLabel5.setText("Total Líquido: R$ 359,53");
 
@@ -178,7 +178,7 @@ public class JPanelVendas extends javax.swing.JPanel implements AdminPanel {
                 .addContainerGap()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 364, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 365, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())

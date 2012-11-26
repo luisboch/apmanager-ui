@@ -33,7 +33,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="jScrollPane2" pref="364" max="32767" attributes="0"/>
+              <Component id="jScrollPane2" pref="365" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" max="-2" attributes="0"/>
@@ -130,7 +130,7 @@
                 <Column editable="false" title="Quantidade de Produtos" type="java.lang.Integer"/>
                 <Column editable="false" title="Total Geral" type="java.lang.Object"/>
                 <Column editable="false" title="Total L&#xed;quido" type="java.lang.Object"/>
-                <Column editable="false" title="Margen" type="java.lang.Object"/>
+                <Column editable="false" title="Margem" type="java.lang.Object"/>
               </Table>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -219,7 +219,7 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="jLabel6">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Margen Obtida:"/>
+            <Property name="text" type="java.lang.String" value="Margem Obtida:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel5">
