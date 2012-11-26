@@ -265,11 +265,5 @@ public class JPanelVehicle extends AbstractAdminPanel implements AdminPanel {
         });
         
     }
-
-    @Override
-    public String getTitle() {
-        return "Veículos";
-    }
-    
     
 }

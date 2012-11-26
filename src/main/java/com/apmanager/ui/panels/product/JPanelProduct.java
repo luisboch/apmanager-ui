@@ -265,11 +265,5 @@ public class JPanelProduct extends AbstractAdminPanel implements AdminPanel {
         });
         
     }
-
-    @Override
-    public String getTitle() {
-        return "Produtos";
-    }
-    
     
 }

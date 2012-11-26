@@ -20,22 +20,28 @@ import javax.swing.JPanel;
  */
 public enum WindowType {
 
-    SALE(JPanelVenda.class),
-    SALES_SEARCH(JPanelVendas.class),
-    PRODUCT_CRUD(JPanelProduct.class),
-    VEHICLE_BRAND_CRUD(JPanelVehicleBrand.class),
-    SHELF_CRUD(JPanelShelf.class),
-    VEHICLE_CRUD(JPanelVehicle.class),
-    PRODUCT_BRAND_CRUD(JPanelProductBrand.class);
+    SALE(JPanelVenda.class,"Vendas"),
+    SALES_SEARCH(JPanelVendas.class, "Pesquisa de Vendas"),
+    PRODUCT_CRUD(JPanelProduct.class, "Produtos"),
+    VEHICLE_BRAND_CRUD(JPanelVehicleBrand.class, "Marcas de Veículos"),
+    SHELF_CRUD(JPanelShelf.class, "Prateleiras"),
+    VEHICLE_CRUD(JPanelVehicle.class,"Veículos"),
+    PRODUCT_BRAND_CRUD(JPanelProductBrand.class, "Marcas de Produtos");
 
-    Class<? extends JPanel> destined;
+    private Class<? extends JPanel> destined;
+    private String title;
+    
 
-    private WindowType(Class<? extends JPanel> destined) {
+    private WindowType(Class<? extends JPanel> destined, String title) {
         this.destined = destined;
+        this.title = title;
     }
 
     public Class<? extends JPanel> getDestined() {
-
         return destined;
+    }
+
+    public String getTitle() {
+        return title;
     }
 }

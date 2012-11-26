@@ -54,6 +54,7 @@ public class JMenuDinamic extends JMenuItem implements ActionListener{
         
         if(app.getSelected() == null || !app.getSelected().equals(this)){
             app.setApplicationPanel(getPanel());
+            app.setTitle(type.getTitle());
         }
         
         app.setSelected(this);

@@ -52,7 +52,7 @@ public class JPanelVenda extends javax.swing.JPanel implements AdminPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new Table();
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new Button(this, KeyEvent.VK_F8);
+        jButtonCloseSale = new Button(this, KeyEvent.VK_F8);
         jButtonAlterQuantity = new Button(this, KeyEvent.VK_F7);
         jButtonRemove = new Button(this, KeyEvent.VK_DELETE);
 
@@ -68,7 +68,7 @@ public class JPanelVenda extends javax.swing.JPanel implements AdminPanel {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jButton1.setText("Fechar Venda");
+        jButtonCloseSale.setText("Fechar Venda");
 
         jButtonAlterQuantity.setText("Alterar Quantidade");
 
@@ -84,7 +84,7 @@ public class JPanelVenda extends javax.swing.JPanel implements AdminPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButtonAlterQuantity)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
+                .addComponent(jButtonCloseSale)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -92,7 +92,7 @@ public class JPanelVenda extends javax.swing.JPanel implements AdminPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
+                    .addComponent(jButtonCloseSale)
                     .addComponent(jButtonAlterQuantity)
                     .addComponent(jButtonRemove))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -120,8 +120,8 @@ public class JPanelVenda extends javax.swing.JPanel implements AdminPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonAlterQuantity;
+    private javax.swing.JButton jButtonCloseSale;
     private javax.swing.JButton jButtonRemove;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
@@ -237,7 +237,7 @@ public class JPanelVenda extends javax.swing.JPanel implements AdminPanel {
 
     private void addButtonListeners() {
         final JPanelVenda panel = this;
-        jButton1.addActionListener(new ActionListener(jPanel1) {
+        jButtonCloseSale.addActionListener(new ActionListener(jPanel1) {
             @Override
             public void onActionPerformed(ActionEvent e) throws Exception {
                 ConfirmDialog confirm = new ConfirmDialog(Application.getInstance());
@@ -266,22 +266,6 @@ public class JPanelVenda extends javax.swing.JPanel implements AdminPanel {
             
         });
         
-        jButtonRemove.addActionListener(new ActionListener(this){
-
-            @Override
-            public void onActionPerformed(ActionEvent e) throws Exception {
-                ConfirmDialog confirm = new ConfirmDialog(Application.getInstance());
-                confirm.setText("Você deseja realmente remover estes itens?<br>Esta ação não pode ser desfeita");
-                panel.setEnabled(false);
-                confirm.setVisible(true);
-                panel.setEnabled(true);
-                if (confirm.getResponse()) {
-                    log.info("Removing Itens");
-                }
-            }
-            
-        });
-        
         jButtonAlterQuantity.addActionListener(new ActionListener(this){
 
             @Override
@@ -293,11 +277,4 @@ public class JPanelVenda extends javax.swing.JPanel implements AdminPanel {
             
         });
     }
-
-    @Override
-    public String getTitle() {
-        return "Vendas";
-    }
-    
-    
 }

@@ -269,10 +269,4 @@ public class JPanelVehicleBrand extends AbstractAdminPanel implements AdminPanel
         
     }
 
-    @Override
-    public String getTitle() {
-        return "Marcas de Veiculos";
-    }
-    
-    
 }

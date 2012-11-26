@@ -58,10 +58,5 @@ public class NewJPanel extends javax.swing.JPanel implements AdminPanel{
     public void loadContent() {
         
     }
-
-    @Override
-    public String getTitle() {
-        return "";
-    }
     
 }

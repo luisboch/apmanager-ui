@@ -198,7 +198,6 @@ public class Application extends javax.swing.JFrame {
 
                 AdminPanel admPanel = (AdminPanel) panel;
                 admPanel.loadContent();
-                setTitle(admPanel.getTitle());
             }
         };
 

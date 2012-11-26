@@ -268,11 +268,5 @@ public class JPanelProductBrand extends AbstractAdminPanel implements AdminPanel
         });
         
     }
-
-    @Override
-    public String getTitle() {
-        return "Marcas de Produtos";
-    }
-    
     
 }

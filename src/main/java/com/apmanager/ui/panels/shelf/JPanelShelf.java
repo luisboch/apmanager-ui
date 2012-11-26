@@ -265,10 +265,4 @@ public class JPanelShelf extends AbstractAdminPanel implements AdminPanel {
         
     }
 
-    @Override
-    public String getTitle() {
-        return "Prateleiras";
-    }
-    
-    
 }
