@@ -139,7 +139,7 @@ public class JDialogProductEdit extends JDialogEscape {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Veículo");
+        setTitle("Produto");
         setMinimumSize(new java.awt.Dimension(781, 596));
 
         jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder("Dados do Produto"));
@@ -223,7 +223,7 @@ public class JDialogProductEdit extends JDialogEscape {
                     .addComponent(jButtonEditAppliance)
                     .addComponent(jButtonAddAppliance))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 109, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE)
                 .addContainerGap())
         );
 

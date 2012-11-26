@@ -17,7 +17,7 @@ import javax.swing.JOptionPane;
 public class UIUtils {
     private static final Logger log = Logger.getLogger(UIUtils.class.getSimpleName());
     
-    public static void remove(List<Entity> entities) {
+    public static void remove(List<? extends Entity> entities) {
         if(entities.isEmpty()){
             JOptionPane.showMessageDialog(Application.getInstance(), "Não nenhum item selecionado!");
             return;

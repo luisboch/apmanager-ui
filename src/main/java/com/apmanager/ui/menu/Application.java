@@ -62,9 +62,8 @@ public class Application extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenuVenda = new javax.swing.JMenu();
         jMenuItem4 = new JMenuDinamic(this, WindowType.SALE);
-        jMenuItem5 = new JMenuDinamic(this, WindowType.SALES_SEARCH);
         jMenu4 = new javax.swing.JMenu();
-        jMenuItem6 = new javax.swing.JMenuItem();
+        jMenuItem6 = new JMenuDinamic(this, WindowType.SALES_SEARCH);
         jMenu3 = new javax.swing.JMenu();
         jMenuItem10 = new JMenuDinamic(this, WindowType.PRODUCT_CRUD);
         jMenuItem9 = new JMenuDinamic(this, WindowType.VEHICLE_CRUD);
@@ -95,14 +94,11 @@ public class Application extends javax.swing.JFrame {
         jMenuItem4.setText("Venda");
         jMenuVenda.add(jMenuItem4);
 
-        jMenuItem5.setText("Pesquisar");
-        jMenuVenda.add(jMenuItem5);
-
         jMenuBar1.add(jMenuVenda);
 
         jMenu4.setText("Administração");
 
-        jMenuItem6.setText("jMenuItem6");
+        jMenuItem6.setText("Vendas");
         jMenu4.add(jMenuItem6);
 
         jMenuBar1.add(jMenu4);
@@ -162,7 +158,6 @@ public class Application extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
