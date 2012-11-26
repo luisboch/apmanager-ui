@@ -58,25 +58,11 @@
             </plugin>
         </plugins>
     </build>
-    <repositories>
-        <repository>
-            <url>http://download.eclipse.org/rt/eclipselink/maven.repo/</url>
-            <id>eclipselink</id>
-            <layout>default</layout>
-            <name>Repository for library EclipseLink (JPA 2.0)</name>
-        </repository>
-    </repositories>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     
     <dependencies>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.11</version>
-            <scope>test</scope>
-        </dependency>
         <dependency>
             <groupId>com.apmanager</groupId>
             <artifactId>apmanager-domain</artifactId>
@@ -87,11 +73,13 @@
             <artifactId>swing-layout</artifactId>
             <version>1.0.3</version>
         </dependency>
-        <!--        <dependency>
+        <!--
+        <dependency>
             <groupId>com.towel</groupId>
             <artifactId>objecttablemodel</artifactId>
             <version>1.0</version>
-        </dependency>-->
+        </dependency>
+        -->
         
         <!-- Maven dependencies -->
         <dependency>
@@ -103,16 +91,6 @@
             <groupId>org.codehaus.plexus</groupId>
             <artifactId>plexus-utils</artifactId>
             <version>1.1</version>
-        </dependency>
-        <dependency>
-            <groupId>org.eclipse.persistence</groupId>
-            <artifactId>eclipselink</artifactId>
-            <version>2.4.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.eclipse.persistence</groupId>
-            <artifactId>javax.persistence</artifactId>
-            <version>2.0.4.v201112161009</version>
         </dependency>
         <dependency>
             <groupId>com.toedter</groupId>

@@ -4,8 +4,10 @@
  */
 package com.apmanager.ui.main;
 
-
+import com.apmanager.domain.dao.GenericDAO;
 import com.apmanager.ui.menu.Application;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.UIManager;
 
 /**
@@ -13,6 +15,7 @@ import javax.swing.UIManager;
  * @author ADMIN
  */
 public class Main {
+
     public static void main(String args[]) {
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -20,20 +23,36 @@ public class Main {
          */
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-        } catch (ClassNotFoundException |  InstantiationException | 
+        } catch (ClassNotFoundException | InstantiationException |
                 IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Application.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
+
+        Thread r = new Thread(new Runnable() {
             @Override
             public void run() {
-                Application app =Application.getInstance();
-                app.setVisible(true);
+                JDialogSplash splash = new JDialogSplash(null);
+                splash.setVisible(true);
 
+                splash.setMessage("Iniciando Banco de Dados...", 15);
+                GenericDAO dao = new GenericDAO();
+                splash.setMessage("Aplicando alterações...", 60);
+                Application app = Application.getInstance();
+                splash.setMessage("Concluindo...", 95);
+
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                splash.setVisible(false);
+                app.setVisible(true);
             }
         });
+        r.start();
+
     }
 }
