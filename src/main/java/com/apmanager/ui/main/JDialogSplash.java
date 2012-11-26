@@ -4,6 +4,12 @@
  */
 package com.apmanager.ui.main;
 
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Graphics;
+import java.awt.Insets;
+import javax.swing.border.Border;
+
 /**
  *
  * @author luis
@@ -17,6 +23,12 @@ public class JDialogSplash extends javax.swing.JDialog {
         super(parent, false);
         initComponents();
         setLocationRelativeTo(null);
+        
+        // Transparent BG
+        getRootPane().setOpaque(false);
+        getContentPane().setBackground(new Color(0, 0, 0, 0));
+        setBackground(new Color(0, 0, 0, 0));
+
     }
 
     /**
@@ -58,14 +70,37 @@ public class JDialogSplash extends javax.swing.JDialog {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel2;
     private javax.swing.JProgressBar jProgressBar1;
     // End of variables declaration//GEN-END:variables
-    public void setMessage(String message, int percent){
+
+    public void setMessage(String message, int percent) {
         //jLabel2.setText(message);
         jProgressBar1.setValue(percent);
+    }
+
+    private static class RoundedBorder implements Border {
+
+        private int radius;
+
+        RoundedBorder(int radius) {
+            this.radius = radius;
+        }
+
+        @Override
+        public Insets getBorderInsets(Component c) {
+            return new Insets(this.radius + 1, this.radius + 1, this.radius + 2, this.radius);
+        }
+
+        @Override
+        public boolean isBorderOpaque() {
+            return true;
+        }
+
+        @Override
+        public void paintBorder(Component c, Graphics g, int x, int y, int width, int height) {
+            g.drawRoundRect(x, y, width - 1, height - 1, radius, radius);
+        }
     }
 }

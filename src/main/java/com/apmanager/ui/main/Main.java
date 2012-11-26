@@ -6,6 +6,7 @@ package com.apmanager.ui.main;
 
 import com.apmanager.domain.dao.GenericDAO;
 import com.apmanager.ui.menu.Application;
+import java.awt.Color;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.UIManager;
@@ -36,7 +37,6 @@ public class Main {
             public void run() {
                 JDialogSplash splash = new JDialogSplash(null);
                 splash.setVisible(true);
-
                 splash.setMessage("Iniciando Banco de Dados...", 15);
                 GenericDAO dao = new GenericDAO();
                 splash.setMessage("Aplicando alterações...", 60);
