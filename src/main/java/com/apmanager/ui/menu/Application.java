@@ -17,6 +17,7 @@ import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.KeyStroke;
+import org.java.ayatana.ApplicationMenu;
 
 /**
  *
@@ -24,12 +25,14 @@ import javax.swing.KeyStroke;
  */
 public class Application extends javax.swing.JFrame {
 
+    private static final Logger log = Logger.getLogger(Application.class.getSimpleName());
+    
     private static Application instance;
 
     private JMenuDinamic selected;
 
     private final JDialogLoading loading = new JDialogLoading(this);
-
+    
     private Application() {
         initComponents();
 
@@ -209,7 +212,7 @@ public class Application extends javax.swing.JFrame {
         panel.setVisible(true);
         frame.revalidate();
         frame.repaint();
-        Logger.getLogger(frame.getClass().getSimpleName()).log(
+        log.log(
                 Level.INFO, "panel '{'{0}'}' has add", panel.toString());
     }
 
@@ -225,6 +228,14 @@ public class Application extends javax.swing.JFrame {
         Toolkit kit = Toolkit.getDefaultToolkit();
         Image img = kit.createImage(url);
         setIconImage(img);
+        
+        // Integrate to Unity menubar.
+        try{
+            ApplicationMenu.tryInstall(this);
+        }catch(Throwable e){
+            log.log(Level.INFO, "Error on integrate to Ubuntu Unity: {0}",
+                    e.getMessage());
+        }
     }
 
     @Override
