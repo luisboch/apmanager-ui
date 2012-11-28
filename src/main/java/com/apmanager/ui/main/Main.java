@@ -6,10 +6,13 @@ package com.apmanager.ui.main;
 
 import com.apmanager.domain.dao.GenericDAO;
 import com.apmanager.ui.menu.Application;
-import java.awt.Color;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import javax.swing.UIManager;
+
 
 /**
  *
@@ -38,7 +41,9 @@ public class Main {
                 JDialogSplash splash = new JDialogSplash(null);
                 splash.setVisible(true);
                 splash.setMessage("Iniciando Banco de Dados...", 15);
-                GenericDAO dao = new GenericDAO(null);
+                EntityManagerFactory emf = Persistence.createEntityManagerFactory("testPU");
+                EntityManager em = emf.createEntityManager();
+                GenericDAO dao = new GenericDAO(em);
                 splash.setMessage("Aplicando alterações...", 60);
                 Application app = Application.getInstance();
                 splash.setMessage("Concluindo...", 95);
