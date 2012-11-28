@@ -38,7 +38,7 @@ public class Main {
                 JDialogSplash splash = new JDialogSplash(null);
                 splash.setVisible(true);
                 splash.setMessage("Iniciando Banco de Dados...", 15);
-                GenericDAO dao = new GenericDAO();
+                GenericDAO dao = new GenericDAO(null);
                 splash.setMessage("Aplicando alterações...", 60);
                 Application app = Application.getInstance();
                 splash.setMessage("Concluindo...", 95);
