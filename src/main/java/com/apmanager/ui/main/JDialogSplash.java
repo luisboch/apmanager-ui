@@ -65,7 +65,7 @@ public class JDialogSplash extends javax.swing.JDialog {
     // End of variables declaration//GEN-END:variables
 
     public void setMessage(String message, int percent) {
-        //jLabelMessage.setText(message);
+        jLabelMessage.setText(message);
         jProgressBar1.setValue(percent);
     }
 }
