@@ -47,12 +47,14 @@ public class Main {
                 splash.setMessage("Aplicando alterações...", 60);
                 Application app = Application.getInstance();
                 splash.setMessage("Concluindo...", 95);
-
+                
                 try {
                     Thread.sleep(2000);
                 } catch (InterruptedException ex) {
                     Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
                 }
+                
+                splash.setMessage("...Pronto", 100);
                 splash.setVisible(false);
                 app.setVisible(true);
             }
